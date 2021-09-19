@@ -1,0 +1,196 @@
+/* FONT */
+
+@font-face {
+    font-family: 'CombiNumeralsLtd';
+    src: url('font/CombiNumeralsLtd.otf');
+}
+
+/* GENERAL STYLING OF CORE ELEMENTS & BODY */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'CombiNumeralsLtd', sans-serif;
+}
+
+body,
+.clock .hand,
+.clock::after,
+.clock .hand.minute,
+.clock .hand.hour {
+    background-color: #000;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* STYLE CLOCK & NUMBERS */
+
+.clock,
+.clock::after {
+    border-radius: 50%;
+}
+
+.clock {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('starry-night.jpg');
+    border: 6px solid #005FC5;
+    height: 600px;
+    position: relative;
+    width: 600px;
+}
+
+.clock .number,
+.clock .hand,
+.clock::after {
+    position: absolute;
+}
+
+.clock .number {
+    --rotation: 0;
+    color: #DAA520;
+    font-size: 2.5rem;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    width: 100%;
+}
+
+/* INCREASE SIZE OF 12, 3, 6 & 9 ON CLOCK */
+
+.clock .lg {
+    font-size: 5.5rem;
+}
+
+/* CLOCK INTERVALS (SECONDS BETWEEN NUMBERS) */
+
+.clock .int {
+    font-size: 0.5rem;
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+/* i-1 > i-48: REPRESENTS THE SECOND INTERVALS ON CLOCK AND THEIR ROTATION / POSITION */
+
+/* 12 - 1 */
+.clock .i-1 { --rotation: 6deg; } 
+.clock .i-2 { --rotation: 12deg; } 
+.clock .i-3 { --rotation: 18deg; } 
+.clock .i-4 { --rotation: 24deg; }
+/* 1 - 2 */
+.clock .number1 { --rotation: 30deg; } 
+.clock .i-5 { --rotation: 36deg; } 
+.clock .i-6 { --rotation: 42deg; } 
+.clock .i-7 { --rotation: 48deg; } 
+.clock .i-8 { --rotation: 54deg; }
+/* 2 - 3 */
+.clock .number2 { --rotation: 60deg; } 
+.clock .i-9 { --rotation: 66deg; } 
+.clock .i-10 { --rotation: 72deg; } 
+.clock .i-11 { --rotation: 78deg; } 
+.clock .i-12 { --rotation: 84deg; }
+/* 3 - 4 */
+.clock .number3 { --rotation: 90deg; } 
+.clock .i-13 { --rotation: 96deg; } 
+.clock .i-14 { --rotation: 102deg; } 
+.clock .i-15 { --rotation: 108deg; } 
+.clock .i-16 { --rotation: 114deg; }
+/* 4 - 5 */
+.clock .number4 { --rotation: 120deg; } 
+.clock .i-17 { --rotation: 126deg; } 
+.clock .i-18 { --rotation: 132deg; } 
+.clock .i-19 { --rotation: 138deg; } 
+.clock .i-20 { --rotation: 144deg; }
+/* 5 - 6 */
+.clock .number5 { --rotation: 150deg; } 
+.clock .i-21 { --rotation: 156deg; } 
+.clock .i-22 { --rotation: 162deg; } 
+.clock .i-23 { --rotation: 168deg; } 
+.clock .i-24 { --rotation: 174deg; }
+/* 6 - 7 */
+.clock .number6 { --rotation: 180deg; } 
+.clock .i-25 { --rotation: 186deg; } 
+.clock .i-26 { --rotation: 192deg; } 
+.clock .i-27 { --rotation: 198deg; } 
+.clock .i-28 { --rotation: 204deg; }
+/* 7 - 8 */
+.clock .number7 { --rotation: 210deg; } 
+.clock .i-29 { --rotation: 216deg; } 
+.clock .i-30 { --rotation: 222deg; } 
+.clock .i-31 { --rotation: 228deg; } 
+.clock .i-32 { --rotation: 234deg; }
+/* 8 - 9 */
+.clock .number8 { --rotation: 240deg; } 
+.clock .i-33 { --rotation: 246deg; } 
+.clock .i-34 { --rotation: 252deg; } 
+.clock .i-35 { --rotation: 258deg; } 
+.clock .i-36 { --rotation: 264deg; }
+/* 9 - 10 */
+.clock .number9 { --rotation: 270deg; } 
+.clock .i-37 { --rotation: 276deg; } 
+.clock .i-38 { --rotation: 282deg; } 
+.clock .i-39 { --rotation: 288deg; } 
+.clock .i-40 { --rotation: 294deg; }
+/* 10 - 11 */
+.clock .number10 { --rotation: 300deg; } 
+.clock .i-41 { --rotation: 306deg; } 
+.clock .i-42 { --rotation: 312deg; } 
+.clock .i-43 { --rotation: 318deg; } 
+.clock .i-44 { --rotation: 324deg; }
+/* 11 - 12 */
+.clock .number11 { --rotation: 330deg; }
+.clock .i-45 { --rotation: 336deg; }
+.clock .i-46 { --rotation: 342deg; }
+.clock .i-47 { --rotation: 348deg; }
+.clock .i-48 { --rotation: 354deg; }
+
+.clock .hand,
+.clock::after {
+    border: 1px solid #005FC5;
+}
+
+.clock .hand {
+    --rotation: 30deg;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    z-index: 10;
+}
+
+/* CLOCK HAND PIN: SET PLACEHOLDER 'CONTENT' AS PART OF DOM FOR ELEMENT TO APPEAR */
+
+.clock::after {
+    content: '';
+    height: 20px;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%);
+    width: 25px;
+    z-index: 11;
+}
+
+/* CLOCK HANDS */
+
+.clock .hand.second {
+    background-color: #DD0000;
+    height: 45%;
+    width: 5px;
+}
+
+.clock .hand.minute {
+    height: 40%;
+    width: 10px;
+}
+
+.clock .hand.hour {
+    height: 35%;
+    width: 15px;
+}
