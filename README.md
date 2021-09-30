@@ -1,3 +1,6 @@
+![dynamic_clock](https://user-images.githubusercontent.com/68791163/135515942-a9ce28f9-ca84-4cf0-a1d8-e70a29b1f8a1.PNG)
+
+
 # Javascript-Ticking-Clock
 A working, ticking clock with a visually pleasing CSS design scheme. Adapted from Web Dev Simplified.
 
